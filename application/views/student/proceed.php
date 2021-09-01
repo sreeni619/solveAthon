@@ -52,16 +52,30 @@
 	$(document).ready(function(){
 		var base_url = '<?php echo base_url(); ?>';
 
-		$('#student_name').keyup(function(){
-            $(this).val($(this).val().toUpperCase());
+		$('#student_name').keypress(function(e){
+			var inputValue = e.charCode;
+			if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+				e.preventDefault();
+			}
+        });
+
+		$('#student_name').keyup(function(e){
+			$(this).val($(this).val().toUpperCase());
         });
 
 		$('#email').keyup(function(){
             $(this).val($(this).val().toLowerCase());
         });
 
-		$('#team_name').keyup(function(){
-            $(this).val($(this).val().toUpperCase());
+		$('#team_name').keypress(function(e){
+			var inputValue = e.charCode;
+			if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+				e.preventDefault();
+			}
+        });
+
+		$('#team_name').keyup(function(e){
+			$(this).val($(this).val().toUpperCase());
         });
 
 		$('#mobile').keypress(function(e) {

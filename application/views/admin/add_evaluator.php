@@ -47,10 +47,14 @@
 
 <script>
 	$(document).ready(function(){
+
 		var base_url = '<?php echo base_url(); ?>';
 		
-		$("#name").keypress(function(e){
-		    
+        $("#name").keypress(function(e){
+		    var inputValue = e.charCode;
+			if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+				e.preventDefault();
+			}
             if ($(this).val().length == 0) {
                 var a = [];
                 var k = e.which;

@@ -332,10 +332,10 @@ class Student extends CI_Controller {
 
 			$state = $this->input->post('state');
 			$district = $this->input->post('district');
-			$city = $this->input->post('city');
+			$city = strtoupper($this->input->post('city'));
 			$level = $this->input->post('level');
 			$program = $this->input->post('program');
-			$college = $this->input->post('college');
+			$college = strtoupper($this->input->post('college'));
 			$combineData = $state.','.$district.','.$city.','.$level.','.$program.','.$college;
 			$encryptedCollege = base64_encode($this->encrypt->encode($combineData));
 			redirect('student/proceed/'.$encryptedCollege);
@@ -360,10 +360,10 @@ class Student extends CI_Controller {
 			$combineData = $this->encrypt->decode(base64_decode($encryptedCollege));
 			$splitData = explode(",",$combineData);
 			
-			$student_name = $this->input->post('student_name');
+			$student_name = strtoupper($this->input->post('student_name'));
 			$mobile = $this->input->post('mobile');
 			$email = $this->input->post('email');
-			$team_name = $this->input->post('team_name');
+			$team_name = strtoupper($this->input->post('team_name'));
 
 			// CHECK MOBILE, EMAIL, TEAM_NAME
 			$mobile_check = $this->data_model->getDetailsSelectField('count(id) as cnt', 'mobile', $mobile, 'students')->row();

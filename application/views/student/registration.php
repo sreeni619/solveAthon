@@ -38,7 +38,8 @@
 					<!-- <label class="h6">College</label> -->
                     <input type="text" id="college" name="college" class="form-control" placeholder="Enter College Full Name" value="<?php echo (set_value('college'))?set_value('college'):'';?>">
                     <p class="text-muted">(Enter the Full College Name) </p>
-                    <?php echo form_error('college', '<div class="error">', '</div>'); ?>
+					<span id="lblError" style="color: red"></span>
+                    <?php echo form_error('college', '<div class="error" id="lblError">', '</div>'); ?>
 				</div>
 				<div class="form-group mb-3 text-end">
 					<button type="submit" class="btn btn-primary btn-sm" id="proceed" name="proceed">Proceed</button>
@@ -50,7 +51,7 @@
 <script>
 	$(document).ready(function(){
 		var base_url = '<?php echo base_url(); ?>';
-
+		
 		$("#state").change(function(){
 			event.preventDefault();
 	            	
@@ -73,6 +74,29 @@
 			  
 			}
 		});
+
+		$('#city').keypress(function(e){
+			var inputValue = e.charCode;
+			if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+				e.preventDefault();
+			}
+        });
+
+		$('#city').keyup(function(e){
+			$(this).val($(this).val().toUpperCase());
+        });
+
+		$('#college').keypress(function(e){
+			var inputValue = e.charCode;
+			if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+				e.preventDefault();
+			}
+			$(this).val($(this).val().toUpperCase());
+        });
+
+		$('#college').keyup(function(e){
+			$(this).val($(this).val().toUpperCase());
+        });
 
 // 		$("#district").change(function(){
 // 			event.preventDefault();

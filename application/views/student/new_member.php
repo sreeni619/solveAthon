@@ -41,6 +41,13 @@
             $(this).val($(this).val().toUpperCase());
         });
 
+        $('#member_name').keypress(function(e){
+			var inputValue = e.charCode;
+			if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+				e.preventDefault();
+			}
+        });
+
 		$('#member_email').keyup(function(){
             $(this).val($(this).val().toLowerCase());
         });
