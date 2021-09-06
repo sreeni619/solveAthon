@@ -447,14 +447,11 @@ class Admin extends CI_Controller {
     	 if ($this->form_validation->run() === FALSE){
            $this->admin_template->show('admin/add_evaluator',$data);
 		 }else{
-		     $categories = $this->input->post('categories');
-		     $categoriesList = implode(",",$categories);
 		     $insertData = array('username' => $this->input->post('username'),
 								'name' => $this->input->post('name'),
 								'password' => md5("INDIA"),
 								'mobile' => $this->input->post('mobile'),
 								'email' => $this->input->post('email'),
-								'categories' => $categoriesList,
 								'status' => '1'
 							);
 							

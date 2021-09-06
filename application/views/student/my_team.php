@@ -1,7 +1,8 @@
 		<div class="row gx-lg-8 gx-xl-12 gy-10 mb-10 mb-md-14 align-items-center">
 			  
 			<div class="col-md-8 offset-2">
-			   
+			   <div class="card">
+			   	<div class="card-body">
 			  <?php if($this->session->flashdata('message')){?> 
               <div align="center" class="alert alert-success" id="msg">      
                 <?php echo $this->session->flashdata('message')?>
@@ -41,7 +42,8 @@
 			        echo "</div>";
 			    }
 			  ?>
-			  
+			  </div>
+			</div>
 			</div>
         </div>
 

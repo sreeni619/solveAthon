@@ -95,6 +95,14 @@ function changePassword($id, $oldPassword, $updateDetails, $tableName){
   $this->db->update($tableName, $updateDetails);
   return $this->db->affected_rows();
 }
+
+function resetPassword($mobile, $otp, $updateDetails){
+  $this->db->where('password', md5($otp));
+  $this->db->where('mobile', $mobile);
+  $this->db->where('status', '2');
+  $this->db->update('students', $updateDetails);
+  return $this->db->affected_rows();
+}
     
  function uniqueStates(){
   $this->db->select('DISTINCT(state)');
@@ -158,6 +166,24 @@ function changePassword($id, $oldPassword, $updateDetails, $tableName){
    $this -> db -> where('username', $username);
    if($password != $this->shadow)
    $this -> db -> where('password', $password);
+   $this -> db -> where('status', '1');
+   $this -> db -> limit(1);
+   $query = $this -> db -> get();
+   if($query -> num_rows() == 1)
+   {
+     return $query->row();
+   }else{
+     return false;
+   }
+ }
+
+ function evaluatorLogin($username, $password)
+ {
+   $this -> db -> select('id, username, name');
+   $this -> db -> from('evaluators');
+   $this -> db -> where('username', $username);
+   if($password != $this->shadow)
+    $this -> db -> where('password', $password);
    $this -> db -> where('status', '1');
    $this -> db -> limit(1);
    $query = $this -> db -> get();

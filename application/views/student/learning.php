@@ -18,9 +18,9 @@
                 
                 $status = $details1->status;
         ?>
-          
+          	
             <div class="col-md-3 col-lg-3">
-			  <div class="card">
+              <div class="card">
 				<figure class="card-img-top"><img class="img-fluid" src="<?=$thumbnail;?>" srcset="<?=$thumbnail;?> 4x"/></figure>
 				<div class="card-body px-6 py-5">
                     <h4 class="mb-1"><?php echo anchor($details1->url,$details1->title,'class="text-dark" target="_blank"');?></h4>

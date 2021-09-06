@@ -29,7 +29,8 @@
 				</div>
 				<div class="form-group row mb-3">
 					<div class="col-6">
-						<?php echo anchor('student/register','Not yet register? Click Here','class="hover link-violet"'); ?>
+						<?php echo anchor('student/forgot','Forgot password ?','class="hover link-violet"'); ?>
+						<?php // echo anchor('student/register','Not yet register? Click Here','class="hover link-violet"'); ?>
 					</div>
 					<div class="col-6 text-end">
 						<button type="submit" class="btn btn-primary btn-sm">Login</button>

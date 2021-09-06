@@ -14,9 +14,9 @@
                         </div>
                         <div class="form-side">
                             <h4 class="h4 mb-5">
-                                Solve-A-Thon
+                                Sove-A-Thon Evaluator Login
                             </h4>
-                            <h6 class="my-4">Login</h6>
+                            <!-- <h6 class="my-4">Login</h6> -->
                             <?php if($this->session->flashdata('message')){?> 
                                   <div class="alert alert-danger" id="msg">      
                                     <?php echo $this->session->flashdata('message')?>

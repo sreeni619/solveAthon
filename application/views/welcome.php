@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.ico">
-    <title>SolveAthon</title>
+    <title>SOLVEATHON</title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/plugins.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme/blue.css">
 
@@ -42,12 +40,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <nav class="navbar center-nav transparent navbar-expand-lg navbar-dark">
                 <div class="container flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100"><a href="<?=base_url();?>"><img
-                                src="<?php echo base_url(); ?>assets/img/logo/solveathon_logo.png"
-                                srcset="<?php echo base_url(); ?>assets/img/logo/solveathon_logo.png 5x" alt="" /></a></div>
+                                src="<?php echo base_url(); ?>assets/img/logo/solveathon_white_logo.png"
+                                srcset="<?php echo base_url(); ?>assets/img/logo/solveathon_white_logo.png 5x" alt="SOLVEATHON" /></a></div>
                     <div class="navbar-collapse offcanvas-nav">
                         <div class="offcanvas-header d-lg-none d-xl-none">
                             <a href="<?=base_url();?>"><img src="<?php echo base_url(); ?>assets/img/logo/solveathon_logo.png"
-                                    srcset="<?php echo base_url(); ?>assets/img/logo/solveathon_logo.png 5x" alt="" /></a>
+                                    srcset="<?php echo base_url(); ?>assets/img/logo/solveathon_logo.png 5x" alt="SOLVEATHON" /></a>
                             <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
                                 aria-label="Close"></button>
                         </div>
@@ -94,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <!-- /section -->
         <section id="about">
-            <div class="wrapper bg-gray">
+            <div class="wrapper">
                 <div class="container py-12 py-md-12">
                     <h2 class="display-4 mb-3 text-center">ABOUT US</h2>
                     <h5 class="mb-10 px-xl-10">The Covid-19 pandemic has unearthed a need for the world to pause and re-evaluate the path we are on. It taught that we need to be agile and adaptable to un-precedent circumstances, and who better to raise awareness about the pandemic than the future leaders of tomorrow.</h5>
@@ -126,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row gx-lg-0 gy-10 mb-10 align-items-center">
                         <h2 class="display-4 mb-3 text-center">SOLVEATHON DASHBOARD</h2>
                         <div class="col-lg-6 order-lg-2 offset-lg-1 grid">
-                            <h5 class="display-6 mb-7"><span id="infoname" class="name text-danger"></span> </h5>
+                            <h5 class="display-6 mb-7"><span id="infoname" class="name text-warning"></span> </h5>
                             <div class="row gx-md-5 gy-5 align-items-center counter-wrapper isotope">
                                 <div class="item col-md-6">
                                     <div class="card shadow-lg">
@@ -339,14 +337,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- /.wrapper -->
         </section>
         <!-- /section -->
-        <section class="wrapper bg-gray" id="ideas">
+        <section class="wrapper" id="ideas">
             <div class="container py-14 pt-md-0 pb-md-16">
                 <div class="container py-7 py-md-0">
                     <h2 class="display-4 mb-3 text-center">IDEAS</h2>
                     <p class="lead text-center mb-6 px-md-16 px-lg-0">Problem Catgories and Areas</p>
                     <div class="row">
-                        <div class="col-md-7">
-                            <div class="row">
                               <div class="col-md-3 offset-2">
                                 <div class="card mb-5">
                                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>/assets/img/Sanitization.png" srcset="<?=base_url();?>/assets/img/Sanitization.png 2x" alt="" /></figure>
@@ -371,8 +367,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="row">
                               <div class="col-md-3 offset-3">
                                 <div class="card mb-5">
                                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>/assets/img/crowd_management.png" srcset="<?=base_url();?>/assets/img/crowd_management.png 2x" alt="" /></figure>
@@ -390,9 +384,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                               </div>
                             </div>        
-                        </div>
-                        <div class="col-md-5">
-                            <canvas id="doughnut-chartcanvas" width="100%"></canvas>
+
+                    <div class="row">
+                        <div class="col-md-6 offset-3">
+                            <div class="card shadow-lg">
+                                <div class="card-body">
+                                    <canvas id="doughnut-chartcanvas" width="60%"></canvas>    
+                                </div>
+                            </div>
+
+                            
                         </div>
                     </div>
                     
@@ -431,7 +432,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card shadow-lg h-100 align-items-center">
                             <div class="card-body align-items-center d-flex px-3 py-6 p-md-8">
-                                <figure class="px-md-3 mb-0"><img src="<?php echo base_url(); ?>assets/img/brands/Cognizant.jpg" alt="Cognizant"></figure>
+                                <figure class="px-md-3 mb-0"><img src="<?php echo base_url(); ?>assets/img/brands/Cognizant.jpg" alt="Cognizant"></ figure>
                             </div>
                             <!--/.card-body -->
                         </div>
@@ -549,18 +550,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     label: "Outreach Snapshot",
                     data: categories_count,
                     backgroundColor: [
-                        "#DEB887",
-                        "#A9A9A9",
-                        "#DC143C",
-                        "#F4A460",
-                        "#2E8B57"
-                    ],
-                    borderColor: [
-                        "#CDA776",
-                        "#989898",
-                        "#CB252B",
-                        "#E39371",
-                        "#1D7A46"
+                        "#2de5a7",
+                        "#2ea2f9",
+                        "#fc657b",
+                        "#fbbc41",
+                        "#8f79d7"
                     ],
                     borderWidth: [1, 1, 1, 1, 1]
                 }
@@ -571,7 +565,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         var options = {
             responsive: true,
             title: {
-                display: true,
+                display: false,
                 position: "top",
                 text: "Outreach Snapshot",
                 fontSize: 18,

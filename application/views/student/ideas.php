@@ -78,44 +78,54 @@
 ?>
             <div class="row text-center gx-lg-8 gy-5 mb-10 mb-md-14">
               <div class="col-md-2 col-lg-2 offset-1">
+                <a href="<?=base_url();?>student/submitIdea/1">
                 <div class="card">
                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>assets/img/Sanitization.png" srcset="<?=base_url();?>assets/img/Sanitization.png 2x" alt="Sanitation" /></figure>
                   <div class="card-body px-6 py-5">
                     <h4 class="mb-1"><?php echo anchor('student/submitIdea/1','Sanitation<br/><br/>');?></h4>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-2 col-lg-2">
+                <a href="<?=base_url();?>student/submitIdea/2">
                 <div class="card">
                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>assets/img/crowd_management.png" srcset="<?=base_url();?>assets/img/crowd_management@2x.png 2x" alt="Sanitization" /></figure>
                   <div class="card-body px-6 py-5">
                     <h4 class="mb-1"><?php echo anchor('student/submitIdea/2','Crowd Management');?></h4>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-2 col-lg-2">
+                <a href="<?=base_url();?>student/submitIdea/3">
                 <div class="card">
                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>assets/img/health.png" srcset="<?=base_url();?>assets/img/health@2x.png 2x" alt="Health" /></figure>
                   <div class="card-body px-6 py-5">
                     <h4 class="mb-1"><?php echo anchor('student/submitIdea/3','Health <br/><br/>');?></h4>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-2 col-lg-2">
+                <a href="<?=base_url();?>student/submitIdea/4">
                 <div class="card">
                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>assets/img/environment.png" srcset="<?=base_url();?>assets/img/environment@2x.png 2x" alt="Community Gatherings" /></figure>
                   <div class="card-body px-6 py-5">
                     <h4 class="mb-1"><?php echo anchor('student/submitIdea/4','Environment<br/><br/>');?></h4>
                   </div>
                 </div>
+                </a>
               </div>
               <div class="col-md-2 col-lg-2">
+                <a href="<?=base_url();?>student/submitIdea/5">
                 <div class="card">
                   <figure class="card-img-top"><img class="img-fluid" src="<?=base_url();?>assets/img/digital_solutions.png" srcset="<?=base_url();?>assets/img/digital_solutions@2x.png 2x" alt="Community Gatherings" /></figure>
                   <div class="card-body px-6 py-5">
                     <h4 class="mb-1"><?php echo anchor('student/submitIdea/5','Digital Solutions');?></h4>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
 <?php     

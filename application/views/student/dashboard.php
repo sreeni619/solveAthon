@@ -9,12 +9,12 @@
                   <div class="card-body py-5">
                     <h4><?php echo $team_name;?></h4>
                     <?php $i = ($Idea) ? $Idea->status : 0; ?>
-                    <p class="mb-1 <?="text-".$ideaStausColor[$i];?>">
+                    <h5 class="mb-1 <?="text-".$ideaStausColor[$i];?>">
                         <?php 
                             $sta  = ($Idea) ? $ideaStaus[$Idea->status] : $ideaStaus[0]; 
-                            echo anchor('student/ideas',$sta, "class='text-".$ideaStausColor[$i]."'");
+                            echo anchor('student/ideas',$sta, "class='text-bold text-".$ideaStausColor[$i]."'");
                         ?>
-                    </p>
+                    </h5>
                   </div>
                   <!--/.card-body -->
                 </div>
@@ -23,6 +23,7 @@
             
         <div class="row text-center mt-6">
               <div class="col-md-4 col-lg-4">
+                <a href="<?=base_url();?>student/learning">
                 <div class="card bg-pale-violet">
                   <div class="card-body">
                     <img src="<?php echo base_url();?>assets/img/icons/video.svg" class="svg-inject icon-svg icon-svg-md text-violet mb-4" alt="" />
@@ -30,10 +31,13 @@
                   </div>
                   <!--/.card-body -->
                 </div>
+                </a>
                 <!--/.card -->
               </div>
               <!--/column -->
+              
               <div class="col-md-4 col-lg-4">
+                <a href="<?=base_url();?>student/my_team">
                 <div class="card bg-pale-aqua">
                   <div class="card-body">
                     <img src="<?php echo base_url();?>assets/img/icons/team.svg" class="svg-inject icon-svg icon-svg-md text-aqua mb-4" alt="" />
@@ -42,9 +46,12 @@
                   <!--/.card-body -->
                 </div>
                 <!--/.card -->
+                </a>
               </div>
+              
               <!--/column -->
               <div class="col-md-4 col-lg-4">
+                <a href="<?=base_url();?>student/my_profile">
                 <div class="card bg-pale-red">
                   <div class="card-body">
                     <img src="<?php echo base_url();?>assets/img/icons/id-card.svg" class="svg-inject icon-svg icon-svg-md text-red mb-4" alt="" />
@@ -54,6 +61,7 @@
                 </div>
                 <!--/.card -->
               </div>
+              </a>
               <!--/column -->
             </div>
             

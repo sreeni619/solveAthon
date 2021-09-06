@@ -1,6 +1,8 @@
 		<div class="row gx-lg-8 gx-xl-12 gy-10 mb-10 mb-md-14 align-items-center">
 			  
 			<div class="col-md-6 offset-3">
+              <div class="card">
+                <div class="card-body">
 			   <?php echo form_open_multipart($action, 'class="user"'); ?>
 			   
 			    <div class="form-group mb-2">
@@ -25,10 +27,10 @@
                     <button type="submit" class="btn btn-danger btn-sm" name="Update" id="Update"> SUBMIT </button>
           		    <?php echo anchor('student/my_team','CANCEL', 'class="btn btn-info btn-sm" '); ?>
                 </div>
-                  
-			   
+
                </form>
-			  
+			  </div>
+            </div>
 			</div>
         </div>
 

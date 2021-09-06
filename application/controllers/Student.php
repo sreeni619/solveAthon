@@ -64,6 +64,65 @@ class Student extends CI_Controller {
    		}
  	}
 
+	function forgot(){
+		$data['page_title'] = "Forgot Password";
+		$data['action'] = 'student/forgot';
+		$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|exact_length[10]|callback_regmobile_check');
+		if($this->form_validation->run() == FALSE) 	
+	    {
+			$data['display'] = 1;
+			$this->student_template->show('student/forgot_password',$data);
+	    }else{
+			$mobile = $this->input->post('mobile'); 
+			
+			$data['mobile'] = $mobile;
+
+			$otp = random_int(100000, 999999);
+
+			$data['otp'] = $otp;
+
+			$updateData = array('password' => md5($otp), 'status' => '2');
+		    $result = $this->data_model->updateDetailsbyfield('mobile', $mobile, $updateData, 'students');  
+		    
+		    if ($result) {
+		    	$data['display'] = 2;
+		    	$data['action'] = 'student/forgot1';
+		    	$this->student_template->show('student/forgot_password1',$data);
+        	}else {
+        		 $data['display'] = 3;
+        		 $this->student_template->show('student/forgot_password',$data);
+			}
+	    	
+	   }
+	}
+
+	function forgot1(){
+		$data['page_title'] = "Forgot Password";
+		$data['action'] = 'student/forgot1';
+		$this->form_validation->set_rules('otp', 'OTP', 'trim|required|exact_length[6]');
+		$this->form_validation->set_rules('new_password', 'New Password', 'trim|required|min_length[4]');
+		if($this->form_validation->run() == FALSE) 	
+	    {
+			$data['display'] = 2;
+			$this->student_template->show('student/forgot_password1',$data);
+	    }else{
+			$mobile = $this->input->post('mobile'); 
+			$otp = $this->input->post('otp'); 
+			$new_password = $this->input->post('new_password'); 
+			
+			$updateData = array('password' => md5($new_password), 'status' => '1');
+		    $result = $this->data_model->resetPassword($mobile, $otp, $updateData);  
+		    
+		    if ($result) {
+		    	$data['display'] = 4;
+        	}else {
+        		 $data['display'] = 3;
+			}	 
+
+			$this->student_template->show('student/forgot_password',$data);   	
+	   }
+	}
+
 	 function dashboard(){
 	   if($this->session->userdata('logged_in'))
 	   {
@@ -278,6 +337,16 @@ class Student extends CI_Controller {
 	     } else {
 	        $this->form_validation->set_message('mobile_check', 'Mobile number is already registered.');
     	    return FALSE;
+        }
+	 }
+
+	 function regmobile_check($mobile){
+	     $students_check = $this->data_model->getDetailsSelectField('count(id) as cnt', 'mobile', $mobile, 'students')->row();
+	     if($students_check->cnt == 0){
+	        $this->form_validation->set_message('regmobile_check', 'Invalid mobile number.');
+    	    return FALSE;
+	     } else {
+	        return TRUE;
         }
 	 }
 	 
