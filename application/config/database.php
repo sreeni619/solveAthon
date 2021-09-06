@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'solveathon',
+	'hostname' => 'database-1.c0gippaip5z5.us-east-1.rds.amazonaws.com',
+	'username' => 'admin',
+	'password' => 'A67kbOOXcNgIGjwZKk3g',
+	'database' => 'medha_solve',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
